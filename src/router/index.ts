@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
-
+const Content = () => import(/* webpackChunkName: "content" */ '@/views/Content/index.vue');
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -10,8 +10,14 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/content',
         name: 'content',
+        redirect: '/content/snippet',
+        component: Content
+      },
+      {
+        path: '/content/:type',
+        name: 'contentType',
         props: true,
-        component: () => import(/* webpackChunkName: "task" */ '@/views/Content/index.vue')
+        component: Content
       }
     ]
   }
