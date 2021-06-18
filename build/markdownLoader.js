@@ -1,8 +1,8 @@
 const markdown = require('markdown-it')
 
 const transform = function(src) {
-  const start = '<!--'
-  const end = '-->'
+  const start = '<!---'
+  const end = '--->'
   const regS = new RegExp(start, 'g')
   const regE = new RegExp(end, 'g')
   let curr
