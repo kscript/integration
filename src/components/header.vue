@@ -31,4 +31,15 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss" scoped>
+.ant-tabs {
+  :deep .ant-tabs-bar {
+    margin: 0;
+  }
+  :deep .ant-tabs-tab {
+    height: 60px;
+    padding: 20px 16px;
+  }
+}
+</style>
 
