@@ -4,10 +4,10 @@
 
 <script>
 import { computed, defineComponent, defineProps } from 'vue';
-import tool from '@/views/Content/tool.vue';
-import plugin from '@/views/Content/plugin.vue';
-import scripts from '@/views/Content/script.vue';
-import snippet from '@/views/Content/snippet.vue';
+import tool from '@/views/Base/tool.vue';
+import plugin from '@/views/Base/plugin.vue';
+import scripts from '@/views/Base/script.vue';
+import snippet from '@/views/Base/snippet.vue';
 export default defineComponent({
   props: {
     type: {

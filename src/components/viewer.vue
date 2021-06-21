@@ -4,8 +4,8 @@ export default defineComponent({
   name: 'mdViewer',
   props: {
     md: {
-      type: Object,
-      default: (() => [])
+      type: String,
+      default: ''
     }
   },
   setup(props) {
@@ -21,8 +21,10 @@ export default defineComponent({
     return () =>
       h(
         'div',
-        {},
-        markdown.value
+        {
+          className: 'markdown-body',
+          innerHTML: markdown.value
+        }
       )
   }
 })

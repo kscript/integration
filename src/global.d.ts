@@ -8,6 +8,10 @@ type SubMenu = {
   menu: Menu[]
 }
 type MenuList = Array<Menu, SubMenu>
+interface MenuData {
+  type: string,
+  list: MenuList
+}
 interface anyObject<T = any> {
   [prop: string]: T
 }

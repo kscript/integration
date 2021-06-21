@@ -19,7 +19,7 @@ export default defineComponent({
     const activeKey = ref('snippet');
     watch(() => activeKey.value, (type) => {
       Router.push({
-        path: `/content/${type}`
+        path: `/base/${type}`
       })
     }, {
       immediate: true

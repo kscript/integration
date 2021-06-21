@@ -1,0 +1,16 @@
+{
+  "data": {
+    "type": "snippet",
+    "list": [
+      {
+        "title": "CSS",
+        "menu": [
+          {"title": "CSS省略号"},
+          {"title": "CSS夜间主题"},
+          {"title": "CSS灰色效果"},
+          {"title": "CSS过渡效果导致元素抖动"}
+        ]
+      }
+    ]
+  }
+}
