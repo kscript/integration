@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const resolve = (dir) => {
   return path.join(__dirname, dir)
 }
@@ -28,5 +29,13 @@ module.exports = {
       .use(path.join(process.cwd() + '/build/markdownLoader.js'))
       .loader(path.join(process.cwd() + '/build/markdownLoader.js'))
       .end()
+  },
+  configureWebpack: {
+    externals: {
+      // 'ant-design-vue': 'antd'
+    },
+    plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    ]
   }
 }

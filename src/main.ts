@@ -1,13 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import Antd from 'ant-design-vue';
 import components from '@/components';
-import 'ant-design-vue/dist/antd.css';
+// import 'moment/locale/zh-cn'
+import {Tabs, Menu, Layout} from 'ant-design-vue';
 import 'github-markdown-css';
 
 createApp(App)
 .use(router)
-.use(Antd)
+.use(Tabs)
+.use(Menu)
+.use(Layout)
 .use(components)
 .mount('#app')
