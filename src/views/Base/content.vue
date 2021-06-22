@@ -25,9 +25,22 @@
   </a-layout>
 </template>
 <script lang="ts">
-import { defineComponent, nextTick, ref, defineProps, PropType, computed } from 'vue';
+import { defineComponent, nextTick, ref, defineProps, PropType, computed, onUnmounted } from 'vue';
 import { getMarkdownContext } from '@/api';
 import { toHtml } from '@/utils/markdown';
+import {message} from 'ant-design-vue';
+import copy from 'copy-text-to-clipboard';
+const copyText = (ev: Event) => {
+  const target = (ev.target || ev.srcElement) as HTMLElement;
+  if (/^code$/i.test(target.tagName)) {
+    copy(target.innerText.replace(/\n$/, ''));
+    message.success({
+      duration: 1,
+      content: '复制成功!'
+    })
+  }
+}
+
 export default defineComponent({
   name: 'Content',
   props: {
@@ -57,6 +70,10 @@ export default defineComponent({
         current.value = toHtml(md);
       }
     }
+    window.addEventListener('click', copyText);
+    onUnmounted(() => {
+      window.removeEventListener('click', copyText);
+    });
     return {
       list,
       active,
@@ -73,5 +90,36 @@ export default defineComponent({
 }
 .ant-layout-content {
   padding: 15px 20px;
+}
+:deep .markdown-body{
+  code {
+    pointer-events: none;
+    position: relative;
+    display: block;
+    &:after {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 12px;
+      padding: 0px 3px;
+      line-height: 18px;
+      height: 18px;
+      border: 1px solid #1890ff;
+      border-radius: 2px;
+      content: "复制";
+      cursor: pointer;
+      color: #1890ff;
+      pointer-events: auto;
+      opacity: 0;
+      transition: opacity .5s;
+    }
+  }
+  pre {
+    &:hover {
+      code:after {
+        opacity: 1;
+      }
+    }
+  }
 }
 </style>
