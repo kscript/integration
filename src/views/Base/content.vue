@@ -45,8 +45,6 @@ export default defineComponent({
     })
     const getContent = ({path, title}: Menu) => {
       return getMarkdownContext({
-        type: 'text'
-      }, {
         type: props.menu.type,
         path: path || `${title}.md`
       });

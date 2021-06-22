@@ -1,5 +1,5 @@
 const baseUrl = process.env.NODE_ENV === 'development' ? '' : '';
-export const fetchApi = (url: string, options: anyObject) => {
+export const fetchApi = (url: string, options: anyObject = {}) => {
   const result = fetch(baseUrl + url, options);
   const {type = 'json'} = options;
   if (type === 'json') {

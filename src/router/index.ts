@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/base',
         name: 'base',
-        redirect: '/base/snippet',
+        props: true,
         component: Base
       },
       {
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'baseType',
         props: true,
         component: Base
-      }
+      },
     ]
   }
 ]
