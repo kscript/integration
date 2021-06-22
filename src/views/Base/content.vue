@@ -4,16 +4,17 @@
       <a-menu
         mode="inline"
         class="text-left"
-        v-model:selectedKeys="active"
+        v-model:selectedKeys="selectedKeys"
+        v-model:openKeys="openKeys"
       >
         <template v-for="(vo, i1) in list">
           <a-sub-menu v-if="vo.list" :key="i1">
             <template #title>
               {{vo.title}}
             </template>
-            <a-menu-item v-for="(v2, i2) in vo.list" :key="i2" @click="handlerClick(v2, i1, i2)">{{v2.title}}</a-menu-item>
+            <a-menu-item v-for="(v2, i2) in vo.list" :key="i2" @click="handlerClick(i1, i2)">{{v2.title}}</a-menu-item>
           </a-sub-menu>
-          <a-menu-item v-else :key="'e' + i1" @click="handlerClick(vo, i1)">{{vo.title}}</a-menu-item>
+          <a-menu-item v-else :key="'i' + i1" @click="handlerClick(i1)">{{vo.title}}</a-menu-item>
         </template>
       </a-menu>
     </a-layout-sider>
@@ -25,7 +26,7 @@
   </a-layout>
 </template>
 <script lang="ts">
-import { defineComponent, nextTick, ref, defineProps, PropType, computed, onUnmounted } from 'vue';
+import { defineComponent, nextTick, ref, defineProps, PropType, computed, onUnmounted, watch } from 'vue';
 import { getMarkdownContext } from '@/api';
 import { toHtml } from '@/utils/markdown';
 import {message} from 'ant-design-vue';
@@ -50,7 +51,8 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const active = ref([]);
+    const selectedKeys = ref([] as any[]);
+    const openKeys = ref([] as any[]);
     const current = ref(null as Menu | null);
     const toggle = ref(false);
     const list = computed(() => {
@@ -62,21 +64,41 @@ export default defineComponent({
         path: path || `${title}.md`
       });
     }
-    const handlerClick = async (item: Object, index: number, childIndex?: Number) => {
+    const handlerClick = async (index: number, childIndex?: Number) => {
       if (props.menu.list) {
         const list = props.menu.list as MenuList;
         const data = (childIndex === void 0 ? list[index] : list[index].list[childIndex]) as Menu;
         const md = await getContent(data);
         current.value = toHtml(md);
+        if (childIndex === void 0) {
+          selectedKeys.value = ['i' + index];
+        } else {
+          selectedKeys.value = [childIndex]
+        }
       }
     }
+    watch(() => props.menu, (menu) => {
+      current.value = null;
+      if (Array.isArray(menu.list) && menu.list.length) {
+        if (Array.isArray(menu.list[0].list)) {
+          handlerClick(0, 0);
+        } else {
+          handlerClick(0);
+        }
+        openKeys.value = [0];
+        return ;
+      }
+      openKeys.value = [];
+      selectedKeys.value = [];
+    });
     window.addEventListener('click', copyText);
     onUnmounted(() => {
       window.removeEventListener('click', copyText);
     });
     return {
       list,
-      active,
+      selectedKeys,
+      openKeys,
       current,
       toggle,
       handlerClick
