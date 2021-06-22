@@ -1,0 +1,23 @@
+[
+  {
+    "label": "工具",
+    "id": "tool"
+  },
+  {
+    "label": "脚本",
+    "id": "script"
+  },
+  {
+    "label": "笔记",
+    "id": "note",
+    "listUrl": "/docs/note/list.json"
+  },
+  {
+    "label": "插件",
+    "id": "plugin"
+  },
+  {
+    "label": "代码片段",
+    "id": "snippet"
+  }
+]
