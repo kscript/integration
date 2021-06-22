@@ -1,6 +1,8 @@
 const markdown = require('markdown-it')
+const {extract} = require('./yaml-md')
 
 export const transform = (src: string) => {
+  src = extract(src).markdown;
   const start = '<!---'
   const end = '--->'
   const regS = new RegExp(start, 'g')

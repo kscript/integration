@@ -7,11 +7,11 @@
         v-model:selectedKeys="active"
       >
         <template v-for="(vo, i1) in list">
-          <a-sub-menu v-if="vo.menu" :key="i1">
+          <a-sub-menu v-if="vo.list" :key="i1">
             <template #title>
               {{vo.title}}
             </template>
-            <a-menu-item v-for="(v2, i2) in vo.menu" :key="i2" @click="handlerClick(v2, i1, i2)">{{v2.title}}</a-menu-item>
+            <a-menu-item v-for="(v2, i2) in vo.list" :key="i2" @click="handlerClick(v2, i1, i2)">{{v2.title}}</a-menu-item>
           </a-sub-menu>
           <a-menu-item v-else :key="'e' + i1" @click="handlerClick(vo, i1)">{{vo.title}}</a-menu-item>
         </template>
@@ -65,7 +65,7 @@ export default defineComponent({
     const handlerClick = async (item: Object, index: number, childIndex?: Number) => {
       if (props.menu.list) {
         const list = props.menu.list as MenuList;
-        const data = (childIndex === void 0 ? list[index] : list[index].menu[childIndex]) as Menu;
+        const data = (childIndex === void 0 ? list[index] : list[index].list[childIndex]) as Menu;
         const md = await getContent(data);
         current.value = toHtml(md);
       }
