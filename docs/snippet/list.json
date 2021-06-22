@@ -3,12 +3,32 @@
     "type": "snippet",
     "list": [
       {
-        "title": "CSS",
-        "menu": [
-          {"title": "CSS省略号"},
-          {"title": "CSS夜间主题"},
-          {"title": "CSS灰色效果"},
-          {"title": "CSS过渡效果导致元素抖动"}
+        "title": "css",
+        "list": [
+          {
+            "title": "CSS夜间主题",
+            "categories": "css",
+            "tag": "css",
+            "date": "2021/6/22 10:46:14"
+          },
+          {
+            "title": "CSS灰色效果",
+            "categories": "css",
+            "tag": "css",
+            "date": "2021/6/22 10:46:14"
+          },
+          {
+            "title": "CSS省略号",
+            "categories": "css",
+            "tag": "css",
+            "date": "2021/6/22 10:46:14"
+          },
+          {
+            "title": "CSS过渡效果导致元素抖动",
+            "categories": "css",
+            "tag": "css",
+            "date": "2021/6/22 10:46:14"
+          }
         ]
       }
     ]

@@ -1,7 +1,9 @@
-<!--
+---
 title: CSS省略号
-tag: CSS
--->
+categories: css
+tag: css
+date: 2021/6/22 10:46:14
+---
 单行显示省略:
 ``` css
 element {
