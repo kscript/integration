@@ -5,7 +5,7 @@ const resolve = (dir) => {
 }
 
 module.exports = {
-  publicPath: '/',
+  publicPath: '/integration/',
   productionSourceMap: false,
   css: {
     extract: true,
