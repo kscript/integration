@@ -1,4 +1,4 @@
-const baseUrl = process.env.NODE_ENV === 'development' ? '' : '';
+const baseUrl = process.env.NODE_ENV === 'development' ? '' : '/integration/';
 export const fetchApi = (url: string, options: anyObject = {}) => {
   const result = fetch(baseUrl + url, options);
   const {type = 'json'} = options;
