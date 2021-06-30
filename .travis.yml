@@ -4,6 +4,7 @@ node_js:
 install:
   - yarn install
 script:
+  - build:docs
   - yarn build
 deploy:
   provider: pages
