@@ -12,7 +12,7 @@
             <template #title>
               {{vo.title}}
             </template>
-            <a-menu-item v-for="(v2, i2) in vo.list" :key="i2" @click="handlerClick(i1, i2)">{{v2.title}}</a-menu-item>
+            <a-menu-item v-for="(v2, i2) in vo.list" :key="i1 + 'c' + i2" @click="handlerClick(i1, i2)">{{v2.title}}</a-menu-item>
           </a-sub-menu>
           <a-menu-item v-else :key="'i' + i1" @click="handlerClick(i1)">{{vo.title}}</a-menu-item>
         </template>
@@ -26,7 +26,7 @@
   </a-layout>
 </template>
 <script lang="ts">
-import { defineComponent, nextTick, ref, defineProps, PropType, computed, onUnmounted, watch } from 'vue';
+import { defineComponent, nextTick, ref, defineProps, PropType, computed, onUnmounted, watch, getCurrentInstance } from 'vue';
 import { getMarkdownContext } from '@/api';
 import { toHtml } from '@/utils/markdown';
 import {message} from 'ant-design-vue';
@@ -73,7 +73,7 @@ export default defineComponent({
         if (childIndex === void 0) {
           selectedKeys.value = ['i' + index];
         } else {
-          selectedKeys.value = [childIndex]
+          selectedKeys.value = [index + 'c' + childIndex]
         }
       }
     }
