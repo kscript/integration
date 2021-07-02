@@ -4,8 +4,8 @@ node_js:
 install:
   - yarn install
 script:
-  - build:docs
   - yarn build
+  - yarn build:404
 deploy:
   provider: pages
   skip_cleanup: true
