@@ -107,6 +107,9 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
+:deep .ant-layout-sider-children {
+  overflow: auto;
+}
 .ant-layout-header {
   background: none;
 }
