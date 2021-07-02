@@ -1,15 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 const {fileLoader} = require('ks-file-loader');
-const {extract, parseConfig} = require(path.resolve('.//src/utils/yaml-md'));
+const {extract, parseConfig} = require(path.resolve('./src/utils/yaml-md'));
+const docsPath = path.resolve('./public/docs')
 fileLoader({
-  path: path.resolve('./public/docs'),
+  path: docsPath,
   showDir: true,
   readFile: false,
   deep: false,
   loader(stats, data, done) {
     const list = [];
     if (stats.type === 'dir') {
+      const dir = stats.path;
       fileLoader({
         path: stats.path,
         showDir: false,
@@ -33,6 +35,9 @@ fileLoader({
               date: date + ' ' + time
             });
           }
+          Object.assign(config, {
+            path: stats.path.slice(dir.length)
+          })
           list.push(config);
           if (rewrite) {
             const content = '---\n' + 
