@@ -11,6 +11,18 @@
         "title": "图片旋转问题",
         "date": "2021/6/30 10:8:44",
         "path": "\\图片旋转问题.md"
+      },
+      {
+        "title": "electron",
+        "list": [
+          {
+            "title": "主进程与渲染进程通信",
+            "categories": "electron",
+            "tag": "electron",
+            "date": "2021/7/7 10:4:48",
+            "path": "\\electron\\主进程与渲染进程通信.md"
+          }
+        ]
       }
     ]
   }

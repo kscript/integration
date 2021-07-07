@@ -10,28 +10,28 @@
             "categories": "css",
             "tag": "css",
             "date": "2021/6/22 10:46:14",
-            "path": "\\CSS夜间主题.md"
+            "path": "\\css\\CSS夜间主题.md"
           },
           {
             "title": "CSS灰色效果",
             "categories": "css",
             "tag": "css",
             "date": "2021/6/22 10:46:14",
-            "path": "\\CSS灰色效果.md"
+            "path": "\\css\\CSS灰色效果.md"
           },
           {
             "title": "CSS省略号",
             "categories": "css",
             "tag": "css",
             "date": "2021/6/22 10:46:14",
-            "path": "\\CSS省略号.md"
+            "path": "\\css\\CSS省略号.md"
           },
           {
             "title": "CSS过渡效果导致元素抖动",
             "categories": "css",
             "tag": "css",
             "date": "2021/6/22 10:46:14",
-            "path": "\\CSS过渡效果导致元素抖动.md"
+            "path": "\\css\\CSS过渡效果导致元素抖动.md"
           }
         ]
       },
@@ -43,14 +43,14 @@
             "categories": "js",
             "tag": "js",
             "date": "2021/7/2 17:45:58",
-            "path": "\\查看自定义的全局变量.md"
+            "path": "\\js\\查看自定义的全局变量.md"
           },
           {
             "title": "字符串与Unicode码数组相互转换",
             "categories": "js",
             "tag": "js",
             "date": "2021/7/2 17:47:18",
-            "path": "\\字符串与Unicode码数组相互转换.md"
+            "path": "\\js\\字符串与Unicode码数组相互转换.md"
           }
         ]
       },
