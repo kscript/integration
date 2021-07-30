@@ -25,14 +25,16 @@
           {
             "title": "读取复制到系统剪切板的文件路径",
             "categories": "electron",
-            "tag": [
-              "electron",
-              "npm"
-            ],
+            "tag": "electron,npm",
             "date": "2021/7/7 13:46:18",
             "path": "\\electron\\读取复制到系统剪切板的文件路径.md"
           }
         ]
+      },
+      {
+        "title": "element-ui弹框嵌套引发的遮罩bug",
+        "date": "2021/7/13 16:40:25",
+        "path": "\\js\\element-ui弹框嵌套引发的遮罩bug.md"
       }
     ]
   }
