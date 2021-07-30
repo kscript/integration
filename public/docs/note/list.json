@@ -21,6 +21,16 @@
             "tag": "electron",
             "date": "2021/7/7 10:4:48",
             "path": "\\electron\\主进程与渲染进程通信.md"
+          },
+          {
+            "title": "读取复制到系统剪切板的文件路径",
+            "categories": "electron",
+            "tag": [
+              "electron",
+              "npm"
+            ],
+            "date": "2021/7/7 13:46:18",
+            "path": "\\electron\\读取复制到系统剪切板的文件路径.md"
           }
         ]
       }
